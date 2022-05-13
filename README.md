@@ -9,8 +9,8 @@
 **Necesario utilizar NPM**  
 - Como Instalar : [https://docs.npmjs.com/cli/v8/configuring-npm/install]
 
-**Necesario MongoDB**  
-- Como Instalar: [https://www.mongodb.com/docs/manual/installation/]
+**Necesario MONGO_URI**  
+- Como Instalar: [https://www.MONGO_URI.com/docs/manual/installation/]
 
 **Iniciar servidor**  
 ``cd server`` --> Acceder al directorio del server  
