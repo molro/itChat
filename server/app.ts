@@ -35,3 +35,5 @@ httpServer.listen(port, host, () => {
     logger.info(`http://${host}:${port}`);
     socket({io});
 })
+
+export default app
