@@ -7,7 +7,7 @@ import RoomModel from "../models/rooms";
 const mongoURI = config.get<string>('MONGO_URI'); 
 const mongoOpt = config.get<object>('mongoOpt');
 
-export const readRooms = async () => {
+export const readRooms: any = async () => {
     try {
         await mongoose.connect(mongoURI, mongoOpt);
         let rooms = await RoomModel.find({});
@@ -18,7 +18,7 @@ export const readRooms = async () => {
     }
 } 
 
-export const createRooms = async (roomName: string) => {
+export const createRooms: any  = async (roomName: string) => {
     try 
     {    
         await mongoose.connect(mongoURI, mongoOpt);
@@ -49,7 +49,7 @@ export const createRooms = async (roomName: string) => {
     catch (error) {console.log(error)}
 }
 
-export const joinRoom= async (roomId:string, user:string) => {
+export const joinRoom: any = async (roomId:string, user:string) => {
     try {      
         await mongoose.connect(mongoURI, mongoOpt);
         let findRoom = await RoomModel.findOne({_id: roomId})
@@ -67,7 +67,7 @@ export const joinRoom= async (roomId:string, user:string) => {
     }
 }
 
-export const leaveRoom = async (roomId:string, user:string) => {
+export const leaveRoom: any = async (roomId:string, user:string) => {
     try {      
         await mongoose.connect(mongoURI, mongoOpt);
         let findRoom = await RoomModel.findOne({_id: roomId})
@@ -85,7 +85,7 @@ export const leaveRoom = async (roomId:string, user:string) => {
     }
 }
 
-export const getUsers = async (roomId: string) => {
+export const getUsers: any = async (roomId: string) => {
     await mongoose.connect(mongoURI, mongoOpt);
         let findRoom = await RoomModel.findOne({_id: roomId})
         let users = findRoom?.users

@@ -10,7 +10,7 @@ const mongoURI = config.get<string>('MONGO_URI');
 const mongoOpt = config.get<object>('mongoOpt');
 const key = config.get<string>('PRIVATEKEY')
 
-export const home = (req: Request, res: Response) => {
+export const home: any = (req: Request, res: Response) => {
     try { 
         res.json({msg:'conexión Ok'});
     }
@@ -20,7 +20,7 @@ export const home = (req: Request, res: Response) => {
     }
 }
 
-export const registerGet = (req: Request, res: Response) => {
+export const registerGet: any = (req: Request, res: Response) => {
     try { 
         res.json({msg:'Ver mis datos de usuario'});
     }
@@ -30,7 +30,7 @@ export const registerGet = (req: Request, res: Response) => {
     }
 }
 
-export const registerPost = async (req: Request, res: Response) => {
+export const registerPost: any = async (req: Request, res: Response) => {
     console.log('registro')
     const newUser = req.body
     const newPassport = newUser.nickname+newUser.email;
@@ -88,7 +88,7 @@ export const registerPost = async (req: Request, res: Response) => {
     }
 
 
-export const forbidden = (req: Request, res:Response) => {
+export const forbidden: any = (req: Request, res:Response) => {
     try {
         res.json({msg:'Ups! No tienes acceso'});
     }

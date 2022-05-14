@@ -7,7 +7,7 @@ import RoomModel from "../models/rooms";
 const mongoURI = config.get<string>('MONGO_URI');
 const mongoOpt = config.get<object>('mongoOpt');
 
-export const getUsers = async (req: Request, res: Response) => {
+export const getUsers: any = async (req: Request, res: Response) => {
   
     try
     {   
@@ -27,7 +27,7 @@ export const getUsers = async (req: Request, res: Response) => {
     }
 }
 
-export const getUser = async (req: Request, res: Response) => {
+export const getUser: any = async (req: Request, res: Response) => {
     try
     {  
         await mongoose.connect(mongoURI, mongoOpt);
@@ -43,7 +43,7 @@ export const getUser = async (req: Request, res: Response) => {
     }
 }
 
-export const postRooms = async (req: Request, res: Response) => {
+export const postRooms: any = async (req: Request, res: Response) => {
     const newRoom = req.body
     try 
     {    
@@ -84,7 +84,7 @@ export const postRooms = async (req: Request, res: Response) => {
     }
 }
 
-export const getRooms = async (req: Request, res: Response) => {
+export const getRooms: any = async (req: Request, res: Response) => {
     try 
     {
         await mongoose.connect(mongoURI, mongoOpt);
@@ -103,9 +103,7 @@ export const getRooms = async (req: Request, res: Response) => {
     }
 }
 
-
-
-export const messagesUpd= async (roomId:string, message: object) => {
+export const messagesUpd: any= async (roomId:string, message: object) => {
     try {      
         await mongoose.connect(mongoURI, mongoOpt);
         await RoomModel.findOne({_id: roomId}).updateOne({$push: {messages: message}}); 
