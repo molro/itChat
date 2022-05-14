@@ -31,6 +31,7 @@ export const registerGet = (req: Request, res: Response) => {
 }
 
 export const registerPost = async (req: Request, res: Response) => {
+    console.log('registro')
     const newUser = req.body
     const newPassport = newUser.nickname+newUser.email;
     const salt = bcrypt.genSaltSync(10);
