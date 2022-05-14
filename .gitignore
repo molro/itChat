@@ -104,3 +104,4 @@ typings/
 
 # MacOs
 .DS_store
+dist/
