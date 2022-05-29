@@ -3,6 +3,8 @@ import { Link, Navigate } from 'react-router-dom';
 import login from '../services/login';
 import { socket } from '../context/SocketContext';
 import EVENTS from '../config/events';
+import Login_Style from '../styles/Login_Style.css'
+
 export default function Login() {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
@@ -38,21 +40,21 @@ export default function Login() {
     }
   return(
     <>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} class>
         <label>{respuesta}</label>
         <label>
-          <p>Email</p>
-          <input type="text" onChange={e => setUserName(e.target.value)} />
+          {/* <p className="login__title">Email</p> */}
+          <input type="text" className="login__input" placeholder="Email" onChange={e => setUserName(e.target.value)} />
         </label>
         <label>
-          <p>Password</p>
-          <input type="password" onChange={e => setPassword(e.target.value)}/>
+          {/* <p className="login__title">Password</p> */}
+          <input type="password" className="login__input" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
         </label>
-        <div>
-          <button type="submit">Submit</button>
+        <div className='login__buttons'>
+          <button className="login__button" type="submit">Enter</button>
+          <button className="login__button" type="submit"><Link to="/register">Registrate aquí!</Link></button>
         </div>
       </form>
-      <p>Eres nuevo?  <Link to="/register">Registrate aquí!</Link></p>
     </>
   )
 }
